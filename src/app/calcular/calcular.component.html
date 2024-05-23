@@ -1,0 +1,26 @@
+<div class="calculator-container">
+  <h1>Calcular monto</h1>
+  <form [formGroup]="paymentForm">
+    <mat-form-field appearance="outline">
+      <input
+        formControlName="spent"
+        matInput
+        type="text"
+        placeholder="Ingresar consumo"
+        value="{{ paymentForm.get('spent')?.value }}"
+      />
+    </mat-form-field>
+    <button
+      mat-flat-button
+      color="primary"
+      type="submit"
+      (click)="calcularPago()"
+    >
+      Calcular
+    </button>
+  </form>
+
+  <!-- <pre>{{ paymentForm.value | json }}</pre> -->
+
+  <h3>Total: {{ pago }}</h3>
+</div>
